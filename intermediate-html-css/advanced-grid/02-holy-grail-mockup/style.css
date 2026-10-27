@@ -89,3 +89,87 @@
   font-size: 13px;
   font-weight: normal;
 }
+
+/* Holy Grail Mockup Layout */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 4px;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.logo {
+    justify-self: start;
+}
+
+.menu ul {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 20px;
+    justify-content: end;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-rows: 160px repeat(3, 120px);
+    gap: 50px;
+    align-content: start;
+}
+
+.sidebar .photo,
+.sidebar .side-content {
+    display: grid;
+    place-items: center;
+}
+
+/* Navigation */
+.nav {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Article Cards */
+.article {
+    grid-column: 2;
+    grid-row: 3;
+
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+
+    gap: 15px;
+}
+
+.article .card {
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Footer */
+.footer {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
